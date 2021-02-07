@@ -28,4 +28,4 @@ ENV SERVER_PORT=2456
 
 ENTRYPOINT  ["/bin/sh", "entrypoint.sh"]
 
-CMD ["/bin/sh", "start-server.sh"]
+CMD ["/bin/sh", "start-server.sh", "-n"]

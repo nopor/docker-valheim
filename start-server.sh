@@ -13,4 +13,4 @@ echo "### Starting Valheim server ###"
   -password \"${SERVER_PASSWORD}\" \
   -public 1 > /dev/null &
 
-while wait $!; [ $? != 0 ]; do true; done
+ while true; do sleep 1; done
