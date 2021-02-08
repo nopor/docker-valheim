@@ -25,6 +25,8 @@ ENV SERVER_PASSWORD=""
 ENV SERVER_WORLD="World"
 ENV SERVER_PORT=2456
 
+VOLUME ["~/.config/unity3d/IronGate/Valheim","/home/valheim"]
+
 ENTRYPOINT  ["/bin/sh", "entrypoint.sh"]
 
 CMD ["/bin/sh", "start-server.sh", "-n"]
