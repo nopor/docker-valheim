@@ -24,7 +24,7 @@ ENV SERVER_PASSWORD="valheim"
 ENV SERVER_WORLD="Dedicated"
 ENV SERVER_PORT=2456
 
-VOLUME ["/~/.config/unity3d/IronGate/Valheim","/home/valheim/data"]
+VOLUME ["/root/.config/unity3d/IronGate/Valheim","/home/valheim/data"]
 
 ENTRYPOINT  ["/bin/sh", "scripts/init.sh"]
 
