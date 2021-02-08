@@ -20,4 +20,4 @@ There are 2 directories that should be mounted
 - `/home/valheim/data` - This is where steam will install the application
 
 ## Credit
-- based on the initial work of   [https://github.com/nopor/docker-valheim](nopor/docker-valheim)
+- based on the initial work of [nopor/docker-valheim](https://github.com/nopor/docker-valheim)
