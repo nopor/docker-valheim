@@ -9,9 +9,8 @@ RUN mkdir -p /home/valheim/data/ && mkdir -p /home/valheim/scripts/ && ulimit -n
 WORKDIR /home/valheim
 
 ADD scripts /home/valheim/scripts
-ADD start-server.sh /home/valheim/start-server.sh
 
-RUN chmod +x /home/valheim/scripts/init.sh && chmod +x /home/valheim/start-server.sh
+RUN chmod +x /home/valheim/scripts/init.sh && chmod +x /home/valheim/scripts/start-dedicated.sh
 
 EXPOSE 2456/udp
 EXPOSE 2456/tcp
@@ -20,13 +19,13 @@ EXPOSE 2457/tcp
 EXPOSE 2458/udp
 EXPOSE 2458/tcp
 
-ENV SERVER_NAME="Valheim Server"
-ENV SERVER_PASSWORD=""
-ENV SERVER_WORLD="World"
+ENV SERVER_NAME="Valheim Docker Dedicated Server"
+ENV SERVER_PASSWORD="valheim"
+ENV SERVER_WORLD="Dedicated"
 ENV SERVER_PORT=2456
 
 VOLUME ["/~/.config/unity3d/IronGate/Valheim","/home/valheim/data"]
 
 ENTRYPOINT  ["/bin/sh", "scripts/init.sh"]
 
-CMD ["/bin/sh", "start-server.sh", "-n"]
+CMD ["/bin/sh", "scripts/start-dedicated.sh", "-n"]
