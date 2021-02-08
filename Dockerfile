@@ -11,7 +11,7 @@ WORKDIR /home/valheim
 ADD scripts /home/valheim/scripts
 ADD start-server.sh /home/valheim/start-server.sh
 
-RUN chmod +x /home/valheim/entrypoint.sh && chmod +x /home/valheim/start-server.sh
+RUN chmod +x /home/valheim/scripts/init.sh && chmod +x /home/valheim/start-server.sh
 
 EXPOSE 2456/udp
 EXPOSE 2456/tcp
