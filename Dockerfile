@@ -1,9 +1,8 @@
 FROM steamcmd/steamcmd:latest
-USER steam
+
 RUN apt-get update && \
 	apt-get -y install --no-install-recommends libsdl2-2.0-0:i386 && \
 	rm -rf /var/lib/apt/lists/*
-
 
 RUN mkdir -p /home/valheim/data/ && mkdir -p /home/valheim/scripts/ && ulimit -n 2048
 
