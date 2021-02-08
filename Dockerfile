@@ -8,7 +8,7 @@ RUN mkdir -p /home/valheim/data/ && mkdir -p /home/valheim/scripts/ && ulimit -n
 
 WORKDIR /home/valheim
 
-ADD entrypoint.sh /home/valheim/entrypoint.sh
+ADD init /home/valheim/scripts
 ADD start-server.sh /home/valheim/start-server.sh
 
 RUN chmod +x /home/valheim/entrypoint.sh && chmod +x /home/valheim/start-server.sh
@@ -25,8 +25,8 @@ ENV SERVER_PASSWORD=""
 ENV SERVER_WORLD="World"
 ENV SERVER_PORT=2456
 
-VOLUME ["~/.config/unity3d/IronGate/Valheim","/home/valheim"]
+VOLUME ["/~/.config/unity3d/IronGate/Valheim","/home/valheim/data"]
 
-ENTRYPOINT  ["/bin/sh", "entrypoint.sh"]
+ENTRYPOINT  ["/bin/sh", "scripts/init.sh"]
 
 CMD ["/bin/sh", "start-server.sh", "-n"]
