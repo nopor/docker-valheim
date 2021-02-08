@@ -8,7 +8,7 @@ RUN mkdir -p /home/valheim/data/ && mkdir -p /home/valheim/scripts/ && ulimit -n
 
 WORKDIR /home/valheim
 
-ADD init /home/valheim/scripts
+ADD scripts /home/valheim/scripts
 ADD start-server.sh /home/valheim/start-server.sh
 
 RUN chmod +x /home/valheim/entrypoint.sh && chmod +x /home/valheim/start-server.sh
