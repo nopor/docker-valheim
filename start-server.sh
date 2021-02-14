@@ -13,5 +13,5 @@ while true; do
   -port ${SERVER_PORT} \
   -world ${SERVER_WORLD} \
   -password ${SERVER_PASSWORD} \
-  -public 1
+  -public ${SERVER_PUBLIC}
 done

@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  web:
+    build: .
+    ports:
+      - '2456:2456/udp'
+      - '2456:2457/udp'
+      - '2456:2458/udp'
+      - '2456:2456/tcp'
+      - '2456:2457/tcp'
+      - '2456:2458/tcp'
+    environment:
+      - SERVER_NAME="Valheim Server"
+      - SERVER_PASSWORD=""
+      - SERVER_WORLD="World"
+      - SERVER_PORT=2456
+      - SERVER_PUBLIC=1
