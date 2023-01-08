@@ -2,14 +2,18 @@ export temp_ldpath=$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/home/valheim/data/linux64:$LD_LIBRARY_PATH
 export SteamAppId=892970
 
-cp /home/valheim/data/linux64/steamclient.so /home/valheim/data
+ln -s /home/valheim/data/linux64/steamclient.so /home/valheim/data/steamclient.so
+mkdir /root/.steam/sdk64
+ln -s /home/valheim/data/linux64/steamclient.so /root/.steam/sdk64/steamclient.so
 
 export LD_LIBRARY_PATH=$temp_ldpath
 
 echo "### Starting Valheim server ###"
+
 while true; do
-./data/valheim_server.x86_64 \
+/home/valheim/data/valheim_server.x86_64 \
   -nographics \
+  -batchmode \
   -name ${SERVER_NAME} \
   -port ${SERVER_PORT} \
   -world ${SERVER_WORLD} \
