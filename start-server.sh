@@ -9,7 +9,7 @@ export LD_LIBRARY_PATH=$temp_ldpath
 echo "### Starting Valheim server ###"
 while true; do
 ./data/valheim_server.x86_64 \
-  -nographics
+  -nographics \
   -name ${SERVER_NAME} \
   -port ${SERVER_PORT} \
   -world ${SERVER_WORLD} \
